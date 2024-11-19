@@ -104,16 +104,16 @@ This is a simple RESTful API for managing user data. It supports basic CRUD (Cre
 ## Project Structure
 	src/
 	├── config/
-	│   └── db.js         # Database connection setup
+	│   └── db.js         			# Database connection setup
 	├── controllers/
-	│   └── userController.js  # Business logic for user routes
+	│   └── userController.js  		# Business logic for user routes
 	├── models/
-	│   └── userModel.js  # Sequelize User model
+	│   └── userModel.js  			# Sequelize User model
 	├── routes/
-	│   └── userRoutes.js # Express routes for user operations
+	│   └── userRoutes.js 			# Express routes for user operations
 	├── services/
-	│   └── userService.js # Service layer for database operations
-	└── index.js          # Entry point of the API
+	│   └── userService.js 			# Service layer for database operations
+	└── index.js          			# Entry point of the API
 
 ## Troubleshooting
 1. Database connection errors: Verify your `.env` file has the correct database credentials.
