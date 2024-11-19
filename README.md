@@ -18,85 +18,81 @@ This is a simple RESTful API for managing user data. It supports basic CRUD (Cre
 ## Installation
 
 1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd <repository-directory>
-
+	```bash
+	git clone <repository-url>
+	cd <repository-directory>
+	```
+	
 2. Install dependencies:
-  ``bash
-  Copy code
-  npm install
+	```bash
+	npm install
+	```
 
-Configure environment variables: Create a .env file in the root directory and specify the following variables:
+3. Configure environment variables: Create a .env file in the root directory and specify the following variables:
 
-env
-Copy code
-PORT=3000
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=yourpassword
-DB_NAME=yourdbname
-DB_PORT=3306
-Set up the database: Ensure you have an existing MySQL database with a table named users:
+	```env
+	PORT=3000
+	DB_HOST=localhost
+	DB_USER=root
+	DB_PASSWORD=yourpassword
+	DB_NAME=yourdbname
+	DB_PORT=3306
+	```
 
-sql
-Copy code
-CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL UNIQUE
-);
-Usage
-Start the server:
+4. Set up the database: Ensure you have an existing MySQL database with a table named users:
 
-bash
-Copy code
-npm start
-Access the API at:
+	```sql
+	CREATE TABLE users (
+		id INT AUTO_INCREMENT PRIMARY KEY,
+		name VARCHAR(255) NOT NULL,
+		email VARCHAR(255) NOT NULL UNIQUE
+	);
+	```
 
-arduino
-Copy code
-http://localhost:3000
-API Endpoints
-Method	Endpoint	Description
-GET	/users	Retrieve all users
-GET	/users/:id	Retrieve a specific user
-POST	/users	Add a new user
-PUT	/users/:id	Update a user's details
-DELETE	/users/:id	Delete a user
-Sample Payload for POST /users
-json
-Copy code
-{
-  "name": "John Doe",
-  "email": "johndoe@example.com"
-}
-Project Structure
-bash
-Copy code
-src/
-├── config/
-│   └── db.js         # Database connection setup
-├── controllers/
-│   └── userController.js  # Business logic for user routes
-├── models/
-│   └── userModel.js  # Sequelize User model
-├── routes/
-│   └── userRoutes.js # Express routes for user operations
-├── services/
-│   └── userService.js # Service layer for database operations
-└── index.js          # Entry point of the API
-Troubleshooting
-Database connection errors: Verify your .env file has the correct database credentials.
-New table creation (Users): Ensure force and alter options in sequelize.sync() are set to false in index.js.
-License
-This project is licensed under the MIT License.
+## Usage
+1. Start the server:
+	```bash
+	npm start
+	```
 
-vbnet
-Copy code
+2. Access the API at:
+	```URL
+	http://localhost:3000
+	```
 
-### How to Check Markdown Formatting:
-- Use a markdown previewer, such as the one built into VS Code (Ctrl+Shift+V).
-- Upload the `README.md` to a platform like GitHub to verify the formatting looks correct.
+## API Endpoints
+	| Method | Endpoint    | Description               |
+	|--------|-------------|---------------------------|
+	| GET    | /users      | Retrieve all users        |
+	| GET    | /users/:id  | Retrieve a specific user  |
+	| POST   | /users      | Add a new user            |
+	| PUT    | /users/:id  | Update a user's details   |
+	| DELETE | /users/:id  | Delete a user             |
 
-If you still face issues, I can help convert this content into another format like HTML or PDF!
+## Sample Payload for POST /users
+	```json
+	{
+	  "name": "John Doe",
+	  "email": "johndoe@example.com"
+	}
+	```
+	
+## Project Structure
+	```bash
+	src/
+	├── config/
+	│   └── db.js         # Database connection setup
+	├── controllers/
+	│   └── userController.js  # Business logic for user routes
+	├── models/
+	│   └── userModel.js  # Sequelize User model
+	├── routes/
+	│   └── userRoutes.js # Express routes for user operations
+	├── services/
+	│   └── userService.js # Service layer for database operations
+	└── index.js          # Entry point of the API
+	```
+
+## Troubleshooting
+1. Database connection errors: Verify your `.env` file has the correct database credentials.
+2. You need to create the `users` table before start nodejs.
