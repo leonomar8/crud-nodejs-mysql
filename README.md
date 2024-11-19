@@ -11,9 +11,13 @@ This is a simple RESTful API for managing user data. It supports basic CRUD (Cre
 
 ## Prerequisites
 - **Node.js** (v14+)
+- **express** "^4.21.1"
 - **MySQL** database
+- **sequelize**: "^6.37.5"
 - **npm** (Node package manager)
-- Docker (optional, for containerized MySQL database)
+- **Docker** (optional, for containerized MySQL database)
+- **dotenv** "^16.4.5"
+   
 
 ## Installation
 
@@ -39,14 +43,26 @@ This is a simple RESTful API for managing user data. It supports basic CRUD (Cre
 	DB_PORT=3306
 	```
 
-4. Set up the database: Ensure you have an existing MySQL database with a table named users:
+4. Run a mysql container and creates the db database
+	```
+	docker pull mysql
+	docker run --name mysql -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=db -p 3306:3306 -d mysql:latest
+	docker ps
+	```
+ 
+5. Set up the database: Ensure you have an existing MySQL database with a table named users:
 
 	```sql
-	CREATE TABLE users (
+	$ docker exec -ti mysql bash
+	$ mysql -u root -p
+	mysql> show databases;
+	mysql> use db;
+ 	mysql>  CREATE TABLE users (
 		id INT AUTO_INCREMENT PRIMARY KEY,
 		name VARCHAR(255) NOT NULL,
 		email VARCHAR(255) NOT NULL UNIQUE
 	);
+ 	mysql> show tables;
 	```
 
 ## Usage
