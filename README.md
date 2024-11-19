@@ -70,15 +70,12 @@ This is a simple RESTful API for managing user data. It supports basic CRUD (Cre
 	| DELETE | /users/:id  | Delete a user             |
 
 ## Sample Payload for POST /users
-	```json
 	{
 	  "name": "John Doe",
 	  "email": "johndoe@example.com"
 	}
-	```
 	
 ## Project Structure
-	```bash
 	src/
 	├── config/
 	│   └── db.js         # Database connection setup
@@ -91,7 +88,6 @@ This is a simple RESTful API for managing user data. It supports basic CRUD (Cre
 	├── services/
 	│   └── userService.js # Service layer for database operations
 	└── index.js          # Entry point of the API
-	```
 
 ## Troubleshooting
 1. Database connection errors: Verify your `.env` file has the correct database credentials.
