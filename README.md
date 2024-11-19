@@ -69,6 +69,32 @@ This is a simple RESTful API for managing user data. It supports basic CRUD (Cre
 	| PUT    | /users/:id  | Update a user's details   |
 	| DELETE | /users/:id  | Delete a user             |
 
+## CURLs
+1. GET  /users
+	```
+ 	curl --location 'http://localhost:3000/users'
+ 	```
+2. GET  /users/:id
+	```
+ 	curl --location 'http://localhost:3000/Users/1'
+ 	```
+3. POST  /users
+	```
+ 	curl --location 'http://localhost:3000/users' \
+	--header 'Content-Type: application/json' \
+	--data-raw '{"name": "Mariel Antezana", "email": "mantezana@example.com"}'
+ 	```
+4. PUT 	/users/:id
+	```
+ 	curl --location --request PUT 'http://localhost:3000/users/1' \
+	--header 'Content-Type: application/json' \
+	--data-raw '{"name": "Sofia Rios", "email": "sofia@example.com"}'
+ 	```
+5. DELETE  /users/:id
+   	```
+    	curl --location --request DELETE 'http://localhost:3000/users/2'
+ 	```
+
 ## Sample Payload for POST /users
 	{
 	  "name": "John Doe",
