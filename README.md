@@ -82,18 +82,18 @@ This is a simple RESTful API for managing user data. It supports basic CRUD (Cre
 	```
  	curl --location 'http://localhost:3000/users' \
 	--header 'Content-Type: application/json' \
-	--data-raw '{"name": "Mariel Antezana", "email": "mantezana@example.com"}'
+	--data-raw '{"name": "John Doe", "email": "jdoe@example.com"}'
  	```
 4. PUT 	/users/:id
 	```
  	curl --location --request PUT 'http://localhost:3000/users/1' \
 	--header 'Content-Type: application/json' \
-	--data-raw '{"name": "Sofia Rios", "email": "sofia@example.com"}'
+	--data-raw '{"name": "Omar Leon", "email": "oleon@example.com"}'
  	```
 5. DELETE  /users/:id
-   	```
-    	curl --location --request DELETE 'http://localhost:3000/users/2'
- 	```
+	```
+	curl --location --request DELETE 'http://localhost:3000/users/2'
+	```
 
 ## Sample Payload for POST /users
 	{
