@@ -3,6 +3,9 @@
 ## Overview
 This project is a RESTful API for managing user data, built with Node.js using the MVC architecture. It supports basic CRUD (Create, Read, Update, Delete) operations with a MySQL database and leverages Sequelize as the ORM. The API is designed to work seamlessly in a Dockerized environment, making it easy to set up and deploy.
 
+## Architecture Diagram
+![Alt text](crud-nodejs-mysql.png)
+
 ## Features
 - Add new users to the MySQL database.
 - Retrieve all users or a specific user by ID.
