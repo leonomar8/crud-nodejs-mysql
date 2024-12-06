@@ -22,7 +22,15 @@ const User = sequelize.define("User", {
 }, {
   timestamps: false, // Disable timestamps to prevent automatic `createdAt` and `updatedAt` columns
   tableName: 'users', // Use the existing 'users' table in your DB
-  // Do not add extra columns that might be in the model, like `createdAt` and `updatedAt`
 });
+
+// Sync the model with the database to create the table (if it doesn't exist)
+User.sync()
+  .then(() => {
+    console.log('Users table has been created or already exists.');
+  })
+  .catch((err) => {
+    console.error('Error syncing users table:', err);
+  });
 
 module.exports = User;

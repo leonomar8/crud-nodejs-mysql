@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+    ports:
+      - "${PORT}:3000"
+    env_file:
+      - .env
+    depends_on:
+      - mysql
+    networks:
+      - net
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    ports:
+      - "${DB_PORT}:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+    volumes:
+      - /tmp/mysql-data:/var/lib/mysql
+    networks:
+      - net
+
+networks:
+  net:
