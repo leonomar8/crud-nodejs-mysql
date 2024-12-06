@@ -41,8 +41,8 @@ This project is a RESTful API for managing user data, built with Node.js using t
 	CMD ["node", "src/index.js"]
 	```
 
-3. docker-compose.yml
-Creates nodejs api, mysql container and creates the db database with the MYSQL_DATABASE: ${DB_NAME} command
+3. docker-compose.yml:   Creates nodejs api, mysql container and creates the db database with the MYSQL_DATABASE: ${DB_NAME} command
+
  	```
 	version: '3.8'
 	services:
@@ -148,17 +148,14 @@ Creates nodejs api, mysql container and creates the db database with the MYSQL_D
 
 ## MySQL Verification
 
-	```sql
 	$ docker exec -ti mysql bash
 	$ mysql -u root -p
 	mysql> show databases;
 	mysql> use db;
  	mysql> show tables;
   	mysql> select * from users;
-	```
  
 ## Project Structure
-	```
  	.
 	├── docker-compose.yml
 	├── Dockerfile
@@ -181,7 +178,6 @@ Creates nodejs api, mysql container and creates the db database with the MYSQL_D
 		├── services/
 		│   └── userService.js 			# Service layer for database operations
 		└── index.js          			# Entry point of the API
-  	```
 
 ## Troubleshooting
 1. Database connection errors: Verify your `.env` file has the correct database credentials.
