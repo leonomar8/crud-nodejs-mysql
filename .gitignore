@@ -1,2 +1,4 @@
 node_modules/
 .env
+my-nodejs-mysql-app.zip
+.ebextensions/
